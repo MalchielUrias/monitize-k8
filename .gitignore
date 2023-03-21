@@ -27,3 +27,10 @@ override.tf.json
 
 # Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
 # example: *tfplan*
+#
+#
+# Sensitive Docs
+k8_monitize
+k8_monitize.pub
+
+
