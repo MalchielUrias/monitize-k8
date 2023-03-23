@@ -1,7 +1,7 @@
 # Security Group
 variable "ingressports" {
   type    = list(number)
-  default = [8080, 22]
+  default = [80, 8080, 22]
 }
 
 resource "aws_security_group" "jenkins-sg" {

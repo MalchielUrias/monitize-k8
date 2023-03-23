@@ -1,7 +1,9 @@
 #!/bin/bash
-wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
-sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
-sudo apt update && sudo apt upgrade -y
-sudo apt install default-jre -y
-sudo apt install jenkins -y
-sudo systemctl start jenkins
+sudo yum update -y
+sudo yum install wget
+sudo amazon-linux-extras install java-openjdk11
+sudo amazon-linux-extras install epel -y
+sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+sudo yum install jenkins -y
+sudo service jenkins start
